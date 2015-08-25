@@ -36,7 +36,7 @@ var data = [
 **vanilla javascript**
 ```javascript
 // get all records where employee is from Nebraska
-var getNE(d) {
+var getNE = function(d) {
     var ls = [];
     for (i=0; i<data.length; i++) {
         if (data[i].home_state === "Nebraska") {
