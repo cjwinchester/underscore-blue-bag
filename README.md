@@ -38,9 +38,9 @@ var data = [
 // get all records where employee is from Nebraska
 var getNE = function(d) {
     var ls = [];
-    for (i=0; i<data.length; i++) {
-        if (data[i].home_state === "Nebraska") {
-            ls.append(data[i]);
+    for (i=0; i<d.length; i++) {
+        if (d[i].home_state === "Nebraska") {
+            ls.append(d[i]);
         };
     };
     return ls;
