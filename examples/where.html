@@ -1,0 +1,70 @@
+<html>
+
+<script src="http://www.dataomaha.com/media/scripts/underscore-min.js"></script>
+
+<script>
+
+// http://underscorejs.org/#where
+
+var data = [
+    {
+        "name": "Cody Winchester",
+        "home_state": "Wyoming",
+        "job": "reporter",
+        "age":30
+    },
+    {
+        "name": "Matt Wynn",
+        "home_state": "Kurdistan",
+        "job": "reporter",
+        "age":31
+    },
+    {
+        "name": "Graham Archer",
+        "home_state": "Nebraska",
+        "job": "editor",
+        "age":97
+    },
+    {
+        "name": "Ben Vankat",
+        "home_state": "Nebraska",
+        "job": "editor",
+        "age":580
+    },
+    {
+        "name": "Emily Nohr",
+        "home_state": "Nebraska",
+        "job": "reporter",
+        "age":24
+    }
+];
+
+// example: http://dataomaha.com/media/news/2015/streets/
+
+// goal: get all records where employee is from Nebraska
+
+
+
+// vanilla js
+var getNE = function(d) {
+    var ls = [];
+    for (i=0; i<d.length; i++) {
+        if (d[i].home_state === "Nebraska") {
+            ls.push(d[i]);
+        };
+    };
+    return ls;
+};
+//getNE(data);
+
+
+
+
+
+// underscore.js
+var x = _.where(data, {"home_state": "Nebraska"});
+console.log(x);
+
+</script>
+
+</html>

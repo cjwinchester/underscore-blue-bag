@@ -1,0 +1,70 @@
+<html>
+
+<div id="out"></div>
+
+<script type="text/html" id="template">
+    <% _.each( grapefruit, function( human ){ %>
+        <h1><%= human.name %></h1>
+        <ul>
+            <li>Home state: <%= human.home_state %></li>
+            <li>Job: <%= bigLetter(human.job) %></li>            
+            <li>Age: <%= human.age %></li>
+        </ul>
+        <hr>
+    <% }); %>     
+</script>
+
+<script src="http://www.dataomaha.com/media/scripts/underscore-min.js"></script>
+
+<script>
+
+// http://underscorejs.org/#template
+
+var data = [
+    {
+        "name": "Cody Winchester",
+        "home_state": "Wyoming",
+        "job": "reporter",
+        "age":30
+    },
+    {
+        "name": "Matt Wynn",
+        "home_state": "Kurdistan",
+        "job": "reporter",
+        "age":31
+    },
+    {
+        "name": "Graham Archer",
+        "home_state": "Nebraska",
+        "job": "editor",
+        "age":97
+    },
+    {
+        "name": "Ben Vankat",
+        "home_state": "Nebraska",
+        "job": "editor",
+        "age":580
+    },
+    {
+        "name": "Emily Nohr",
+        "home_state": "Nebraska",
+        "job": "reporter",
+        "age":24
+    }
+];
+
+var bigLetter = function(str) {
+    return str.toUpperCase();
+};
+
+// goal: pass data to a template on the page
+_.templateSettings.variable = "grapefruit";
+var t = document.getElementById('template').innerHTML;
+var template = _.template( t );
+document.getElementById('out').innerHTML = template( data );
+
+// n.b. declaration hoisting wouldn't work here, so include any functions you want to use in template *before* passing data to template
+
+</script>
+
+</html>

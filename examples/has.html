@@ -1,0 +1,54 @@
+<html>
+
+<script src="http://www.dataomaha.com/media/scripts/underscore-min.js"></script>
+
+<script>
+
+// http://underscorejs.org/#has
+
+var data = [
+    {
+        "name": "Cody Winchester",
+        "home_state": "Wyoming",
+        "job": "reporter",
+        "age":30,
+        "rabbit": true
+    },
+    {
+        "name": "Matt Wynn",
+        "home_state": "Kurdistan",
+        "job": "reporter",
+        "age":31
+    },
+    {
+        "name": "Graham Archer",
+        "home_state": "Nebraska",
+        "job": "editor",
+        "age":97
+    },
+    {
+        "name": "Ben Vankat",
+        "home_state": "Nebraska",
+        "job": "editor",
+        "age":580
+    },
+    {
+        "name": "Emily Nohr",
+        "home_state": "Nebraska",
+        "job": "reporter",
+        "age":24
+    }
+];
+
+// goal: which person has a rabbit?
+
+// loop over set with _.each() and _.has() on each object to test for rabbit
+_.each(data, function(d) {
+    if ( _.has(d, "rabbit") ) {
+        console.log(d.name + " has a rabbit");
+    };
+});
+
+</script>
+
+</html>

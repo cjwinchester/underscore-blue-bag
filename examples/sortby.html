@@ -1,0 +1,52 @@
+<html>
+
+<script src="http://www.dataomaha.com/media/scripts/underscore-min.js"></script>
+
+<script>
+
+// http://underscorejs.org/#sortBy
+
+var data = [
+    {
+        "name": "Cody Winchester",
+        "home_state": "Wyoming",
+        "job": "reporter",
+        "age":30
+    },
+    {
+        "name": "Matt Wynn",
+        "home_state": "Kurdistan",
+        "job": "reporter",
+        "age":31
+    },
+    {
+        "name": "Graham Archer",
+        "home_state": "Nebraska",
+        "job": "editor",
+        "age":97
+    },
+    {
+        "name": "Ben Vankat",
+        "home_state": "Nebraska",
+        "job": "editor",
+        "age":580
+    },
+    {
+        "name": "Emily Nohr",
+        "home_state": "Nebraska",
+        "job": "reporter",
+        "age":24
+    }
+];
+
+// goal: sort by name
+var x = _.sortBy(data, "name");
+console.log(x);
+
+// sort descending
+var reversed = _.sortBy(data, "name").reverse();
+console.log(reversed);
+
+</script>
+
+</html>

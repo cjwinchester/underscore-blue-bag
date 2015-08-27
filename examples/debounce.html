@@ -1,0 +1,19 @@
+<html>
+
+<script src="http://www.dataomaha.com/media/scripts/underscore-min.js"></script>
+
+<script>
+
+// http://underscorejs.org/#debounce
+
+// goal: trigger function on window resize, but debounce that shiz for performance
+
+var resizeMe = _.debounce(function() {
+    console.log("I am resizing! This message will only occur once per second!");
+}, 1000);
+
+window.addEventListener("resize", resizeMe, false);
+
+</script>
+
+</html>

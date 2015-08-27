@@ -1,0 +1,58 @@
+<html>
+
+<script src="http://www.dataomaha.com/media/scripts/underscore-min.js"></script>
+
+<script>
+
+// http://underscorejs.org/#contains
+
+var data = [
+    {
+        "name": "Cody Winchester",
+        "home_state": "Wyoming",
+        "job": "reporter",
+        "age":30
+    },
+    {
+        "name": "Matt Wynn",
+        "home_state": "Kurdistan",
+        "job": "reporter",
+        "age":31
+    },
+    {
+        "name": "Graham Archer",
+        "home_state": "Nebraska",
+        "job": "editor",
+        "age":97
+    },
+    {
+        "name": "Ben Vankat",
+        "home_state": "Nebraska",
+        "job": "editor",
+        "age":580
+    },
+    {
+        "name": "Emily Nohr",
+        "home_state": "Nebraska",
+        "job": "reporter",
+        "age":24
+    }
+];
+
+// goal: use _.contains() to determine whether any of these honyocks are Graham Archer
+
+// first, get list of names with _.pluck()
+var names = _.pluck(data, "name");
+console.log(names);
+
+// use _.map() to return a capitalized list
+var uppercaseNames = _.map(names, function(d){ return d.toUpperCase(); });
+console.log(uppercaseNames);
+
+// now check graham against that list
+var isEmily = _.contains(uppercaseNames, "GRAHAM ARCHER");
+console.log(isEmily);
+
+</script>
+
+</html>

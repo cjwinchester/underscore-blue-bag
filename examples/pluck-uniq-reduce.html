@@ -1,0 +1,59 @@
+<html>
+
+<script src="http://www.dataomaha.com/media/scripts/underscore-min.js"></script>
+
+<script>
+
+// http://underscorejs.org/#pluck
+// http://underscorejs.org/#uniq
+// http://underscorejs.org/#reduce
+
+var data = [
+    {
+        "name": "Cody Winchester",
+        "home_state": "Wyoming",
+        "job": "reporter",
+        "age":30
+    },
+    {
+        "name": "Matt Wynn",
+        "home_state": "Kurdistan",
+        "job": "reporter",
+        "age":31
+    },
+    {
+        "name": "Graham Archer",
+        "home_state": "Nebraska",
+        "job": "editor",
+        "age":97
+    },
+    {
+        "name": "Ben Vankat",
+        "home_state": "Nebraska",
+        "job": "editor",
+        "age":580
+    },
+    {
+        "name": "Emily Nohr",
+        "home_state": "Nebraska",
+        "job": "reporter",
+        "age":24
+    }
+];
+
+// goal: get list of states
+var x = _.pluck(data, "home_state");
+console.log(x);
+
+// goal: get unique values of states using _.uniq()
+var y = _.uniq(x);
+console.log(y);
+
+// goal: get sum of ages -- use _.reduce() to reduce list to a single value (the sum)
+var a = _.pluck(data, "age");
+var sum = _.reduce(a, function(memo, num){ return memo + num; }, 0);
+console.log(sum);
+
+</script>
+
+</html>

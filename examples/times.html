@@ -1,0 +1,62 @@
+<html>
+
+<style>
+h2 { display:inline-block; margin:0;}
+</style>
+
+<div id="out"></div>
+
+<script src="http://www.dataomaha.com/media/scripts/underscore-min.js"></script>
+
+<script>
+
+// http://underscorejs.org/#times
+
+var data = [
+    {
+        "name": "Cody Winchester",
+        "home_state": "Wyoming",
+        "job": "reporter",
+        "age":30
+    },
+    {
+        "name": "Matt Wynn",
+        "home_state": "Kurdistan",
+        "job": "reporter",
+        "age":31
+    },
+    {
+        "name": "Graham Archer",
+        "home_state": "Nebraska",
+        "job": "editor",
+        "age":97
+    },
+    {
+        "name": "Ben Vankat",
+        "home_state": "Nebraska",
+        "job": "editor",
+        "age":5
+    },
+    {
+        "name": "Emily Nohr",
+        "home_state": "Nebraska",
+        "job": "reporter",
+        "age":24
+    }
+];
+
+// goal: return a sad face for every year of every person's life
+
+var str = '';
+
+_.each(data, function(d) {
+    str +=
+        "<h1>" + d["name"] + "</h1>" + 
+        _(d["age"]).times(function(n){ return "<h2>&#9785;</h2>"; }).join("") + "<hr>";
+});
+
+document.getElementById("out").innerHTML = str;
+
+</script>
+
+</html>
